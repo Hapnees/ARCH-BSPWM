@@ -1,0 +1,35 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+killall -q polybar &
+bluetoothctl pair 08:E4:DF:31:5C:F6 &
+bluetoothctl connect 08:E4:DF:31:5C:F6 &
+sudo openrgb -p Main --startminimized &
+dunst &
+picom &
+numlockx &
+polybar example &
+nitrogen --restore &
+xsetroot -cursor_name left_ptr &
+
+bspc monitor -d 1 2 3 4
+
+bspc config border_width         1
+bspc config window_gap          10
+
+bspc config normal_border_color "#23252e"
+bspc config active_border_color "#23252e"
+bspc config focused_border_color "#adaab5"
+
+#ЦВЕТ ПРОСТРАНСТВА ПРИ ВЫБОРЕ ПОЛОЖЕНИЯ НОВОГО ОКНАЫ
+bspc config presel_feedback_color "#428fc9"
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config paddingless_monocle	 true
+
+bspc config single_monocle false
+
+bspc config focus_follows_pointer true
+bspc config pointer_modifier	super
