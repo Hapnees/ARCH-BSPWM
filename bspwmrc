@@ -1,14 +1,12 @@
 #! /bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-killall -q polybar &
 bluetoothctl pair 08:E4:DF:31:5C:F6 &
 bluetoothctl connect 08:E4:DF:31:5C:F6 &
-sudo openrgb -p Main --startminimized &
 dunst &
 picom &
 numlockx &
-polybar example &
+polybar bar &
 nitrogen --restore &
 xsetroot -cursor_name left_ptr &
 
@@ -33,3 +31,8 @@ bspc config single_monocle false
 
 bspc config focus_follows_pointer true
 bspc config pointer_modifier	super
+
+# ПРАВИЛА ЗАПУСКА ПРИЛОЖЕНИЙ
+bspc rule -a Chromium desktop='^1' state=tiled
+bspc rule -a code-oss desktop='^2' state=tiled
+bspc rule -a TelegramDesktop desktop='^3' state=tiled follow=on
