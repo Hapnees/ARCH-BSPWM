@@ -1,0 +1,43 @@
+@import "main.rasi"
+
+configuration {
+  display-calc: "";
+  modi: "calc";
+  font: "JetBrainsMono Nerd Font Medium 12";
+}
+
+window {
+  width: 25%;
+}
+
+listview {
+  columns: 1;
+  lines: 6;
+  padding: 5 30 0 30;
+}
+
+element {
+  padding: 10 0 10 0;
+  text-color: @fg-alt;
+  border-radius: 12px;
+  border-radius: 6px;
+}
+
+element-text {
+  padding: 0 15 0 15;
+}
+
+message {
+  width: 100%;
+  size: 20px;
+  padding: 0 35 10 30;
+  spacing: 20px;
+  children: [textbox];
+}
+
+textbox{
+  padding: 10 5 10 15;
+  text-color: #fff;
+  background-color: @bg-input;
+  border-radius: 6px;
+}

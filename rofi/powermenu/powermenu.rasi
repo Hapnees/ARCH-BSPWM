@@ -1,0 +1,33 @@
+configuration {
+  combi-modi: "powermenu:~/.config/rofi/powermenu/powermenu.sh";
+  modi: "combi";
+}
+
+@theme "/dev/null"
+@import "../colors.rasi"
+
+window {
+  width: 378px;
+}
+
+listview {
+  layout: horizontal;
+  spacing: 10px;
+  padding: 15px 15px;
+}
+
+element-text {
+  font: "Font Awesome 5 Free Solid 52";
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #212655;
+  text-color: #7176b5;
+}
+
+element-text selected {
+  background-color: @bg-search;
+}
+
+inputbar {
+  enabled: false;
+}

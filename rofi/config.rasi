@@ -1,0 +1,16 @@
+configuration {
+  display-drun: "";
+  drun-display-format: "{icon} {name}";
+  font: "JetBrainsMono Nerd Font Medium 12";
+  icon-theme: "Tela Black Dark";
+  show-icons: true;
+  modi: "drun";
+  kb-cancel: "Escape,Super+BackSpace";
+}
+
+@import "main.rasi"
+
+entry {
+  placeholder: "App search";
+  placeholder-color: #7176b5;
+}
