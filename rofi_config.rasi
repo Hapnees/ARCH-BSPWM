@@ -1,6 +1,7 @@
 configuration {
-  display-drun: "Applications:";
+  display-drun: "";
   display-window: "Windows:";
+  display-calc: "";
   drun-display-format: "{icon} {name}";
   font: "JetBrainsMono Nerd Font Medium 12";
   icon-theme: "Tela Black Dark";
@@ -13,8 +14,10 @@ configuration {
 * {
   bg: #11121D;
   bg-alt: #444b6a;
+  bg-search: #343c82;
+  bg-input: #1f213b;
 
-  bg-selected: #373c54;
+  bg-selected: #2f3968;
 
   fg: #FFFFFF;
   fg-alt: #787c99;
@@ -35,6 +38,7 @@ element {
   // padding: 8 0;
   padding: 8 12;
   text-color: @fg-alt;
+  border-radius: 12px;
 }
 
 element selected {
@@ -61,19 +65,21 @@ element-icon selected {
 }
 
 entry {
-  background-color: @bg-alt;
-  padding: 12;
+  padding: 7 12 7 12;
+  border-radius: 0 6 6 0;
+  background-color: @bg-input;
   text-color: @fg;
 }
 
 inputbar {
-  children: [prompt, entry];
+  height: 50;
+  padding: 15 30 15 30;
 }
 
 listview {
-  // padding: 8 12;
   background-color: @bg;
-  columns: 1;
+  padding: 0 15 0 15;
+  columns: 2;
   lines: 8;
 }
 
@@ -83,9 +89,10 @@ mainbox {
 }
 
 prompt {
-  background-color: @bg-alt;
   enabled: true;
-  padding: 12 0 0 12;
+  background-color: @bg-search;
+  padding: 7 20 0 20;
+  border-radius: 6 0 0 6;
   text-color: @fg;
 }
 
